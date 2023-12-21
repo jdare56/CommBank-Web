@@ -13,6 +13,7 @@ import { Theme } from '../../components/Theme';
 import EmojiPicker from '../../components/EmojiPicker';
 import GoalIcon from './GoalIcon';
 
+
 type Props = { goal: Goal };
 
 type FieldProps = { name: string; icon: IconDefinition };
@@ -145,7 +146,7 @@ export function GoalManager(props: Props) {
       targetAmount: targetAmount ?? props.goal.targetAmount,
     };
 
-    dispatch(updateGoalRedux(updatedGoal));
+    updateGoalApi(props.goal.id, updatedGoal)
   };
 
   const dispatch = useAppDispatch();
